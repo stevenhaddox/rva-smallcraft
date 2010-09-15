@@ -1,0 +1,30 @@
+article img { max-width: 700px; margin: .5em 10px; }
+
+article .entry-header, article .entry-header a { 
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  margin: .5em auto .25em;
+}
+
+article .date-header {
+  margin: 0px 0px 10px;
+  border-bottom: 1px solid #333;
+  padding: 3px;
+  color: #333;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: left;
+}
+
+.entry .info {
+  background: #E85D99;
+  border-color: #B2005E;
+  color: #FFF;
+}
+
+.entry .info a:link, .entry .info a:visited, .entry .info a:hover {
+  color: #FFF;
+}
+
+.separator { padding: 0 .5em; }
