@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+  <$MTInclude module="_head"$>
+</head>
+
+<body>
+<div class="container">
+  <header>
+    <h1 id="banner-header">
+      <a href="<$MTBlogURL$>" accesskey="1">
+        <!-- <img src="<$MTBlogURL$>" alt="<$MTBlogName$>" /> -->
+        <img src="http://redvelvetgirls.typepad.com/.a/6a00d8341c767c53ef0134867eefd4970c-pi" alt="<$MTBlogName$>" />
+      </a>
+    </h1>
+    <h2 id="banner-description">
+      <MTWeblogIfUsesTheme><$MTBlogDescription$><MTElse><MTWeblogStyleIf field="banner_use_image"><MTElse><$MTBlogDescription$></MTElse></MTWeblogStyleIf></MTElse></MTWeblogIfUsesTheme>
+    </h2>
+  </header>
+  <!-- navigation bar is included from a module, so you can edit it once and reuse it across your blog -->
+  <$MTInclude module="_menu"$>
+  <article id="pagebody" class="span-18">

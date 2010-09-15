@@ -1,0 +1,267 @@
+<$MTInclude module="_header"$>
+
+  <MTDateHeader>
+  	<h2 class="date-header"><$MTPageDate format_weblog_date="1"$></h2>
+  </MTDateHeader>
+
+  <div class="entry" id="entry-<$MTEntryID$>">
+
+  <h3 class="entry-header">
+  	<$MTPageTitle$>
+  </h3>
+
+  <div class="entry-content">
+
+  <div class="entry-body">
+  	<$MTPageBody$>
+  </div><!-- .entry-body -->
+
+  </div><!-- .entry-content -->
+
+  <div class="entry-footer">
+  	<p class="entry-footer-info">
+
+  	<$MTTrans phrase="Posted by [_1] at" param="MTEntryAuthorNickname"$> <$MTPageDate format="%X"$>
+
+  	</p><!-- .entry-footer-info -->
+  </div><!-- .entry-footer -->
+
+  </div><!-- .entry -->
+
+  <MTEntryIfAllowPings><!-- TrackBacks -->
+  <div class="trackbacks">
+  <a id="trackback"></a>
+
+  <h3 class="trackbacks-header"><$MTTrans phrase="TrackBack"$></h3>
+
+  <div class="trackbacks-info">
+  	<p><$MTTrans phrase="TrackBack URL for this entry:"$><br /><span class="trackbacks-link"><$MTEntryTrackbackLink$></span></p>
+  	<p><$MTTrans phrase="Listed below are links to weblogs that reference"$> <a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a>:</p>
+  </div><!-- .trackbacks-info -->
+
+  <div class="trackbacks-content">
+  <MTPings>
+  <div class="trackback">
+  	<div class="trackback-content">
+  		<p>
+  		<a id="p<$MTPingID$>"></a>
+  		&raquo; <a rel="nofollow" href="<$MTPingURL$>"><$MTPingTitle$></a> <$MTTrans phrase="from"$> <$MTPingBlogName$><br />
+  		<$MTPingExcerpt$> <a rel="nofollow" href="<$MTPingURL$>">[<$MTTrans phrase="Read More"$>]</a>
+  		</p>
+  	</div><!-- .trackback-content -->
+
+  	<p class="trackback-footer">
+  		<$MTTrans phrase="Tracked on"$> <$MTPingDate format_weblog_datetime="1"$>
+  	</p>
+  </div><!-- .trackback -->
+  </MTPings>
+  </div><!-- trackbacks-content -->
+
+  </div><!-- trackbacks -->
+  </MTEntryIfAllowPings>
+
+  <MTEntryIfAllowComments>
+  <a id="comments"></a>
+  <div class="comments">
+
+  <h3 class="comments-header"><$MTTrans phrase="Comments"$></h3>
+
+  <MTBlogIfEntryCommentFeed><!-- link to comment entry feed -->
+  <div class="comments-info">
+  	<p><a href="<$MTEntryCommentAtomFeedURL$>"><img src="<$MTStaticWebPath$>images/feed.png" alt="<$MTTrans phrase="Feed"$>" width="10" height="10" /></a> <$MTTrans phrase="You can follow this conversation by subscribing to the"$> <a href="<$MTEntryCommentAtomFeedURL$>"><$MTTrans phrase="comment feed"$></a> <$MTTrans phrase="for this post."$></p>
+  </div><!-- .comments-info -->
+  </MTBlogIfEntryCommentFeed>
+
+  <div class="comments-content">
+
+  <MTComments><!-- comment listing -->
+  <a id="c<$MTCommentID$>"></a>
+  <div class="comment" id="comment-<$MTCommentID$>">
+  	<div class="comment-content">
+  		<$MTCommentBody$>
+  	</div><!-- .comment-content -->
+  	<p class="comment-footer">
+  		<$MTTrans phrase="Posted by:"$>
+  		<$MTCommentAuthorLink show_email="0"$> |
+  		<a href="<$MTCommentPermalink$>"><$MTCommentDate format_weblog_datetime="1"$></a>
+  	</p><!-- .comment-footer -->
+  </div><!-- .comment -->
+  </MTComments>
+
+  </div><!-- .comments-content -->
+
+  <MTCommentIfPages><!-- comment pagination tags -->
+  <div class="pager-bottom pager-comments pager content-nav">
+  	<div class="pager-inner">
+  	<MTCommentIfPreviousPage>
+  		<span class="pager-left">
+  			<a href="<$MTCommentPreviousPageURL$>#comments"><span class="chevron">&#171;</span>
+  				<span class="pager-label"><$MTCommentPreviousPageLabel encode_html="1"$></span></a>
+  		</span><!-- .pager-left -->
+  	</MTCommentIfPreviousPage>
+  	<MTCommentIfPreviousPage><MTCommentIfNextPage>
+  		<span class="separator">|</span>
+  	</MTCommentIfNextPage></MTCommentIfPreviousPage>
+  	<MTCommentIfNextPage>
+  		<span class="pager-right">
+  			<a href="<$MTCommentNextPageURL$>#comments"><span class="pager-label"><$MTCommentNextPageLabel encode_html="1"$></span>
+  				<span class="chevron">&#187;</span></a>
+  		</span><!-- .pager-right -->
+  	</MTCommentIfNextPage>
+  	</div><!-- .pager-inner -->
+  </div><!-- .pager-bottom .pager-comments .pager .content-nav -->
+  </MTCommentIfPages>
+
+  </div><!-- .comments -->
+
+  <MTEntryIfCommentsOpen><!-- comment form -->
+  <div id="atp-comments">
+  	<div id="comment-preview" class="hiddenBox">
+  		<h3 id="header-verify-comment" class="comments-header hiddenBox"><$MTTrans phrase="Verify your Comment"$></h3>
+  		<h3 id="header-preview-comment" class="comments-header hiddenBox"><$MTTrans phrase="Previewing your Comment"$></h3>
+  		<div class="comments-content">
+  			<div class="comment">
+  				<div id="comment-preview-content" class="comment-content">
+  				</div>
+  				<p class="comment-footer">
+  					<$MTTrans phrase="Posted by:"$>
+  					<span id="comment-preview-author"></span>&nbsp;|&nbsp;<span id="comment-preview-datetime"></span>
+  				</p>
+  			</div>
+  		</div>
+  	</div>
+  	<div id="comment-preview-confirmation" class="hiddenBox yellowBox">
+  		<p><$MTTrans phrase="This is only a preview. Your comment has not yet been posted."$></p>
+  		<form id="comment-preview-form"
+  			method="post"
+  			onsubmit="atpComments.interceptPost(commentFormNum); return false;">
+  			<input type="submit" name="post" id="comment-confirm-post" value="&nbsp;<$MTTrans phrase="Post"$>&nbsp;" onclick="atpComments.interceptPost(commentFormNum); return false;"/>
+  			<input type="submit" name="edit" id="comment-edit" value="&nbsp;&nbsp;<$MTTrans phrase="Edit"$>&nbsp;&nbsp;" onclick="atpComments.previewOnly(commentFormNum, 2); return false;"/>
+  			<span id="previewFormSpinner" class="hiddenBox"><img src="/.shared/images/spinner.gif" alt="<$MTTrans phrase="Working..."$>" /></span>
+  		</form>
+  	</div>
+  	<div id="comment-error" class="hiddenBox redBox">
+  		<$MTTrans phrase="Your comment could not be posted. Error type:"$> <span id="comment-error-msg"></span>
+  	</div>
+  	<div id="comment-complete" class="hiddenBox <MTWeblogIfCommentsModerated>redBox<MTElse>yellowGreenBox</MTElse></MTWeblogIfCommentsModerated>">
+  		<MTWeblogIfCommentsModerated><$MTTrans phrase="Your comment has been saved. Comments are moderated and will not appear until approved by the author."$><MTElse><$MTTrans phrase="Your comment has been posted."$></MTElse></MTWeblogIfCommentsModerated> <a href="javascript:void 0;" onclick="window.location.hash='#comment-form';window.location.reload(false)"><$MTTrans phrase="Post another comment"$></a>
+  	</div>
+  	<div id="comment-captcha" class="hiddenBox yellowBox">
+  		<div id="captchaText">
+  			<p id="captchaFailMsg" class="captchaErrorText hiddenBox"><$MTTrans phrase="The letters and numbers you entered did not match the image. Please try again."$></p>
+  			<p><$MTTrans phrase="As a final step before posting your comment, enter the letters and numbers you see in the image below. This prevents automated programs from posting comments."$></p>
+  			<p><span id="comment-captcha-viewalt"><$MTTrans phrase="Having trouble reading this image?"$> <a href="#comment-captcha" onClick="atpComments.generateCaptcha(commentFormNum);"><$MTTrans phrase="View an alternate."$></a></span></p>
+  		</div>
+  		<p class=""><img id="captchaImg" /></p>
+  		<form id="comment-captcha-form"
+  			method="post"
+  			onsubmit="atpComments.submitWithCaptcha(commentFormNum); return false;">
+  			<input type="hidden" name="captcha_chal" id="comment-captcha-chal" value="" />
+  			<p>
+  				<input id="comment-captcha-text" name="captcha_text" size="10" />
+  			</p>
+  			<p>
+  				<input type="submit" name="continue" id="captcha-continue" value="&nbsp;<$MTTrans phrase="Continue"$>&nbsp;" />
+  				<span id="captchaFormSpinner" class="commentSpinner hiddenBox"><img src="/.shared/images/spinner.gif" alt="<$MTTrans phrase="Working..."$>" /></span>
+  			</p>
+  		</form>
+  	</div>
+  	<div id="primary-comment-form" class="comment-form">
+  		<form id="comment-form"
+  			method="post">
+  			<input type="hidden" name="entry_xid" id="comment-entry-xid" value="<$MTEntryXID$>" />
+  			<div class="comments-open">
+  				<h2 class="comments-open-header" id="comment-title"><$MTTrans phrase="Post a comment"$></h2>
+  				<div id="comments-open-content" class="comments-open-content">
+  					<MTWeblogIfCommentsModerated>
+  						<p class="comments-open-moderated">
+  							<$MTTrans phrase="Comments are moderated, and will not appear until the author has approved them."$>
+  						</p>
+  					</MTWeblogIfCommentsModerated>
+
+  					<MTWeblogIfRegistrationEnabled>
+  						<p id="comments-open-login" style="display: none;">
+  							<MTWeblogIfRegistrationRequired>
+  								<$MTTrans phrase="This weblog only allows comments from registered users."$>
+  								<$MTTrans phrase="To comment, please"$>
+  								<a href="<$MTEntrySignInURL$>"><$MTTrans phrase="Sign In"$></a>.
+  							<MTElse>
+  								<$MTTrans phrase="If you have a TypeKey or TypePad account, please"$>
+  								<a href="<$MTEntrySignInURL$>"><$MTTrans phrase="Sign In"$></a>
+  							</MTElse>
+  							</MTWeblogIfRegistrationRequired>
+  						</p>
+
+  						<p id="comments-open-logout" style="display: none;">
+  							<$MTTrans phrase="You are currently signed in as"$>
+  							<span id="commenter-name"><$MTTrans phrase="(nobody)"$></span>.
+  							<a href="<$MTEntrySignOutURL$>"><$MTTrans phrase="Sign Out"$></a>
+  						</p>
+  					</MTWeblogIfRegistrationEnabled>
+  						<div id="comments-open-text" style="display:none;">
+  							<textarea id="comment-text" name="text" rows="10" cols="30" onkeyup="atpComments.maxTextArea(this, 64000);"></textarea>
+  							<p class="comments-open-subtext">
+  								(<MTWeblogIfAllowCommentHtml><$MTTrans phrase="You can use HTML tags like &lt;b&gt; &lt;i&gt; and &lt;ul&gt; to style your text."$></MTWeblogIfAllowCommentHtml><MTWeblogIfAutolinkUrls><$MTTrans phrase="URLs automatically linked."$></MTWeblogIfAutolinkUrls>)
+  							</p>
+  						</div>
+  						<div id="comments-open-data" style="display:none;">
+  							<p><$MTTrans phrase="Your Information"$></p>
+  							<p>
+  							<MTWeblogIfAllowAnonComments>
+  								<$MTTrans phrase="(Name is required. Email address will not be displayed with the comment.)"$>
+  							<MTElse>
+  								<$MTTrans phrase="(Name and email address are required. Email address will not be displayed with the comment.)"$>
+  							</MTElse>
+  							</MTWeblogIfAllowAnonComments>
+  							</p>
+  							<p>
+  								<input id="comment-author" at:default="<$MTTrans phrase="Name"$>" name="author" size="30" value="<$MTTrans phrase="Name"$>" onfocus="if(this.value==this.getAttribute('at:default')) this.value='';"  onBlur="if(this.value=='') this.value=this.getAttribute('at:default');" class="grayText"/>
+  								<label for="comment-author" id="comment-author-error" class="comment-error hiddenBox"><$MTTrans phrase="Name is required to post a comment"$></label>
+  							</p>
+  							<p>
+  								<input id="comment-email" at:default="<$MTTrans phrase="Email Address"$>" name="email" size="30" value="<$MTTrans phrase="Email Address"$>" onfocus="if(this.value==this.getAttribute('at:default')) this.value='';"  onBlur="if(this.value=='') this.value=this.getAttribute('at:default');" class="grayText"/>
+  								<label for="comment-email" id="comment-email-error" class="comment-error hiddenBox"><$MTTrans phrase="Please enter a valid email address"$></label>
+  							</p>
+  							<p>
+  								<input id="comment-url" at:default="<$MTTrans phrase="Web Site URL"$>" name="url" size="30" value="<$MTTrans phrase="Web Site URL"$>" onfocus="if(this.value==this.getAttribute('at:default')) this.value='';"  onBlur="if(this.value=='') this.value=this.getAttribute('at:default');" class="grayText"/>
+  								<label for="comment-url" id="comment-url-error" class="comment-error hiddenBox"><$MTTrans phrase="Invalid URL"$></label>
+  							</p>
+  						</div>
+  				</div>
+  				<div id="comments-open-footer" class="comments-open-footer" style="display:none;">
+  					<input type="submit" name="post" id="comment-post-button" value="&nbsp;<$MTTrans phrase="Post"$>&nbsp;" onclick="atpComments.interceptPost(commentFormNum); return false;" disabled="true" />
+  					<input type="submit" name="preview" id="comment-preview-button" value="&nbsp;<$MTTrans phrase="Preview"$>&nbsp;" onclick="atpComments.previewOnly(commentFormNum, 1); return false;" disabled="true" />
+  					<span id="commentEntryFormSpinner" class="commentSpinner hiddenBox"><img src="/.shared/images/spinner.gif" alt="<$MTTrans phrase="Working..."$>" /></span>
+  				</div>
+  			</div>
+  		</form>
+  		<noscript>
+  			<MTWeblogIfRegistrationRequired>
+  			<p><$MTTrans phrase="This weblog only allows comments from registered TypeKey users. To comment, please enable JavaScript so you can sign into TypeKey."$></p>
+  			<MTElse>
+  			<div id="comments-open-noscript" class="comments-open-noscript">
+  				<form action="<$MTCGIPath$><$MTCommentScript$>" method="post">
+  					<input type="hidden" name="entry_xid" id="comment-entry-xid" value="<$MTEntryXID$>" />
+  					<$MTTrans phrase="Name:"$><br /><input type="text" name="author" size="30" /><br />
+  					<$MTTrans phrase="Email address:"$><br /><input type="text" name="email" size="30" /><br />
+  					<$MTTrans phrase="URL:"$><br /><input type="text" name="url" size="30" /><br /><br />
+  					<$MTTrans phrase="Comment:"$><br /><textarea name="text" cols="40" rows="4"></textarea><br />
+
+  					<input type="submit" name="submit" value="<$MTTrans phrase="Submit"$>" />
+  				</form>
+  			</div>
+  			</MTElse>
+  			</MTWeblogIfRegistrationRequired>
+  		</noscript>
+  	</div>
+  </div>
+  <MTElse>
+  	<p class="comments-closed">
+  		<$MTTrans phrase="The comments to this entry are closed."$>
+  	</p>
+  </MTElse>
+  </MTEntryIfCommentsOpen>
+
+  </MTEntryIfAllowComments>
+
+<$MTInclude module="_footer"$>

@@ -1,0 +1,90 @@
+<$MTInclude module="_header"$>
+
+  <!-- archive header -->
+
+  <h2 class="content-header"><$MTTrans phrase="[_1] posts categorized" param="MTArchiveCount"$> "<$MTArchiveTitle$>"</h2>
+
+  <!-- entries -->
+
+  <MTEntries>
+
+  <MTDateHeader>
+    <h2 class="date-header"><$MTEntryDate format_weblog_date="1"$></h2>
+  </MTDateHeader>
+
+  <div class="entry" id="entry-<$MTEntryID$>">
+
+  <h3 class="entry-header">
+    <a href="<$MTEntryPermalink$>"><$MTEntryTitle$></a>
+  </h3><!-- .entry-header -->
+
+  <div class="entry-content">
+
+  <div class="entry-body">
+    <$MTEntryBody$>
+  </div><!-- .entry-body -->
+
+  <MTEntryIfExtended><!-- links to your extended entry -->
+    <p class="entry-more-link">
+      <a href="<$MTEntryPermalink$>#more"><$MTTrans phrase="Continue reading"$> "<$MTEntryTitle$>" &raquo;</a>
+    </p>
+  </MTEntryIfExtended>
+
+  </div><!-- .entry-content -->
+
+  <div class="entry-footer">
+    <p class="entry-footer-info">
+
+    <$MTTrans phrase="Posted by [_1] at" param="MTEntryAuthorNickname"$> <$MTEntryDate format="%l:%M %p"$>
+    <MTEntryIfCategories><!-- links to the entry's categories -->
+      <$MTTrans phrase="in"$> <MTEntryCategories glue=", "><a href="<$MTCategoryArchiveLink$>"><$MTCategoryLabel$></a></MTEntryCategories>
+    </MTEntryIfCategories>
+
+    <span class="separator">|</span>
+    <a href="<$MTEntryPermalink$>"><$MTTrans phrase="Permalink"$></a>
+
+    <MTEntryIfAllowComments><!-- comment count -->
+      <span class="separator">|</span>
+      <a href="<$MTEntryPermalink$>#comments"><$MTTrans phrase="Comments"$> (<$MTEntryCommentCount$>)</a>
+    </MTEntryIfAllowComments>
+
+    <MTEntryIfAllowPings><!-- trackback count -->
+      <span class="separator">|</span>
+      <a href="<$MTEntryPermalink$>#trackback"><$MTTrans phrase="TrackBack"$> (<$MTEntryTrackbackCount$>)</a>
+    </MTEntryIfAllowPings>
+
+    </p><!-- .entry-footer-info -->
+
+    <MTEntryIfTagged><!-- technorati tags -->
+      <p class="entry-footer-tags">
+        <a href="http://www.<$MTTechnoratiDomain$>/search/<$MTEntryPermalink$>" title="<$MTTrans phrase="Find related items at Technorati."$>"><$MTTrans phrase="Technorati Tags"$></a>:
+        <MTEntryTags glue=", "><a href="http://<$MTTechnoratiDomain$>/tag/<$MTTagLabelClean encode_url="1"$>" rel="tag"><$MTTagLabel$></a></MTEntryTags>
+      </p>
+    </MTEntryIfTagged>
+  </div><!-- .entry-footer -->
+
+  </div><!-- .entry -->
+
+  <MTEntriesFooter>
+  <MTIfPages>
+    <div class="pager-bottom pager-entries pager content-nav">
+    <div class="pager-inner">
+      <MTIfPreviousPage><span class="pager-left">
+        <a href="<$MTPreviousPageURL$>"><span class="chevron">&#171;</span>
+          <span class="pager-label"><$MTEntryPreviousPageLabel encode_html="1"$></span></a>
+      </span></MTIfPreviousPage>
+
+      <MTIfPreviousPage><MTIfNextPage><span class="separator">|</span></MTIfNextPage></MTIfPreviousPage>
+
+      <MTIfNextPage><span class="pager-right">
+        <a href="<$MTNextPageURL$>"><span class="pager-label"><$MTEntryNextPageLabel encode_html="1"$></span>
+          <span class="chevron">&#187;</span></a>
+      </span></MTIfNextPage>
+    </div><!-- .pager-inner -->
+    </div><!-- .pager-bottom .pager-entries .pager .content-nav -->
+  </MTIfPages>
+  </MTEntriesFooter>
+
+  </MTEntries>
+
+<$MTInclude module="_footer"$>

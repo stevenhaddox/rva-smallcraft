@@ -1,3 +1,28 @@
+h1#banner-header { text-align: center; padding-top: .5em; }
+
+/* navigation styling */
+nav {
+  background: transparent url('http://redvelvetgirls.typepad.com/.a/6a00d8341c767c53ef0133f43d6cd5970b-800wi') no-repeat top center;
+  height: 55px;
+  margin: 0 auto .5em;
+}
+nav ul { list-style-type: none; }
+nav ul li { float: left; }
+/* background image with hidden text links */
+nav ul li a { 
+  display: block; 
+  height: 55px;
+  text-indent: -1999px;
+  overflow: hidden;
+}
+nav ul li a:hover { border-bottom: 1px dashed #CCC; }
+nav ul li#nav_home a { margin-left: 60px; width: 105px; }
+nav ul li#nav_twitter a { width: 180px; }
+nav ul li#nav_flickr a { width: 125px; }
+nav ul li#nav_schedule a { width: 185px; }
+nav ul li#nav_supplies a { width: 190px; }
+
+/* article content styling */
 article img { max-width: 700px; margin: .5em 10px; }
 
 article .entry-header, article .entry-header a { 
@@ -17,6 +42,21 @@ article .date-header {
   text-align: left;
 }
 
+/* sidebar modules */
+aside .module ul { list-style-type: none; }
+aside .module-header a { text-decoration: none; }
+aside .module-header {
+  border-bottom: 1px solid #999;
+  color: #666;
+  font-size: 1em;
+  font-weight: normal;
+  line-height: normal;
+  margin: 5px 0px;
+  padding: 3px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
 .entry .info {
   background: #E85D99;
   border-color: #B2005E;
@@ -28,3 +68,25 @@ article .date-header {
 }
 
 .separator { padding: 0 .5em; }
+
+/* newer / older links */
+.pagers {
+  clear: both;
+  height: 1.5em;
+  font-size: 1.25em;
+  font-weight: bold;
+}
+.pagers .prev { float: left; }
+.pagers .next { float: right; }
+.pagers a:link, .pagers a:visited { color: #333; text-decoration: none; }
+.pagers a:hover { color: #333; text-decoration: underline; }
+
+#inspire { text-align: center; }
+#inspire img { max-width: 200px; }
+#inspire textarea { 
+  width: 200px; 
+  height: 2.5em; 
+  overflow: hidden; 
+  overflow-y: hidden; 
+  overflow-x: hidden;
+}
