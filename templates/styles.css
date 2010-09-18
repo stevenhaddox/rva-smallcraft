@@ -1,3 +1,5 @@
+body { font-size: .8em; }
+
 h1#banner-header { text-align: center; padding-top: .5em; }
 
 /* navigation styling */
@@ -69,7 +71,13 @@ aside .module-header {
 
 .separator { padding: 0 .5em; }
 
-/* newer / older links */
+/* top title nav links and bottom newer / older pager links */
+p.content-nav a {
+  color: #666;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+}
 .pagers {
   clear: both;
   height: 1.5em;
@@ -79,7 +87,7 @@ aside .module-header {
 .pagers .prev { float: left; }
 .pagers .next { float: right; }
 .pagers a:link, .pagers a:visited { color: #333; text-decoration: none; }
-.pagers a:hover { color: #333; text-decoration: underline; }
+.pagers a:hover { color: #666; text-decoration: underline; }
 
 #inspire { text-align: center; }
 #inspire img { max-width: 200px; }
@@ -90,3 +98,24 @@ aside .module-header {
   overflow-y: hidden; 
   overflow-x: hidden;
 }
+
+/* comments */
+.comments { }
+.comments .comment {
+  background-color: #999;
+  border-top: 1px dashed #CCC;
+  color: white;
+  padding: 0.5em 0.8em;
+}
+.comments .comment a:link, .comments .comment a:visited { color: #000; text-decoration: none; }
+.comments .comment a:hover { text-decoration: underline; }
+.comments .comment p { margin-bottom: .25em; }
+h2#comment-title {
+  font-size: 1.5em;
+  margin: 1em 0 .5em;
+}
+
+/* archives */
+li.archive-list-item a { text-decoration: none; }
+.module-archives li.module-list-item a { text-decoration: none; }
+.module-category-cloud li.module-list-item a { text-decoration: none; }
